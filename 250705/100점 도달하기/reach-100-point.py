@@ -2,7 +2,7 @@ n = int(input())
 if n > 100 or n < 0:
     print("NAN")
 else:
-    while n != 101:
+    while n <= 100:
         if n >= 90:
             print("A", end=" ")
         elif n >= 80:
