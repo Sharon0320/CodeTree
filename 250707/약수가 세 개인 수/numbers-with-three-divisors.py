@@ -1,12 +1,19 @@
+import math
+
 start, end = map(int, input().split())
 
-result = []
-for i in range(start, end):  # end는 포함 안 되므로 그대로 둠
-    temp = []
-    for j in range(1, i + 1):  # 1부터 i까지 모든 수로 나누어 보기
-        if i % j == 0:
-            temp.append(j)  # 약수를 temp에 저장
-    if len(temp) == 3:  # 약수가 정확히 3개면 조건 만족
-        result.append(i)
+def is_prime(n):
+    if n < 2:
+        return False
+    for i in range(2, int(math.isqrt(n)) + 1):
+        if n % i == 0:
+            return False
+    return True
 
-print(len(result))  # 조건 만족하는 수의 개수 출력
+count = 0
+for i in range(2, int(math.isqrt(end)) + 1):
+    square = i * i
+    if square >= start and square < end and is_prime(i):
+        count += 1
+
+print(count)
