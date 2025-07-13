@@ -6,7 +6,7 @@ month = [31,28,31,30,31,30,31,31,30,31,30,31]
 
 def date(M,D):
     if (M>12):
-        return 0
+        print("No")
     else:
         if (month[M-1] >= D):
             print("Yes")
