@@ -2,4 +2,13 @@ a, b = map(int, input().split())
 
 # Please write your code here.
 
-print(min(a,b)*2,max(a,b)+25)
+def program(a,b):
+    bigger = max(a,b)
+    smaller = min(a,b)
+
+    bigger += 25
+    smaller *= 2
+
+    print(smaller,bigger)
+
+program(a,b)
